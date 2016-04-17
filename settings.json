@@ -1,0 +1,5 @@
+{
+	"backup" : "none",
+	"destination" : "current",
+	"plugins" : "~/.config/webtonote/plugins"
+}
