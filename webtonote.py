@@ -9,7 +9,7 @@ import os
 import json
 import sys
 
-git_url = "https://github.com/LudoZipsin/my-script"
+git_url = "https://github.com/LudoZipsin/webtonote"
 settings_path = "~/.config/webtonote/settings.json"
 
 
