@@ -1,2 +1,5 @@
 *.pyc
 test/*
+*py.swp
+*sublime-project
+*sublime-workspace

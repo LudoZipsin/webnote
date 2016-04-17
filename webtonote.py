@@ -13,16 +13,6 @@ git_url = "https://github.com/LudoZipsin/my-script"
 settings_path = "~/.config/webtonote/settings.json"
 
 
-def generate_pdf_in(url, destination):
-    # expanduser pour destination
-    pass
-
-
-def generate_md_in(url, destination):
-    # expanduser pour destination
-    pass
-
-
 def update_backup_location(destination):
     update_json("backup", destination)
 
@@ -90,7 +80,7 @@ if __name__ == "__main__":
     #
 
     # trois settings important dans le settings path:
-    #       - le répertoire par défaut pour les backups
+    #       - le répre-toire par défaut pour les backups
     #       - le répertoire par défaut pour les plugins
     #       - l'emplacement par défaut pour la destination (initiallement, dans
     #         current (.))
@@ -170,7 +160,7 @@ if __name__ == "__main__":
     #
 
     plugin_manager = PluginManager()
-    plugin_manager.setPluginPlaces([os.path.expanduser(get_plugin_path)])
+    plugin_manager.setPluginPlaces([os.path.expanduser(get_plugin_path())])
     plugin_manager.collectPlugins()
 
     name = args.name
@@ -191,7 +181,7 @@ if __name__ == "__main__":
         backup_path = get_backup_path()
         backup_path_full = os.path.expanduser(backup_path)
         wkhtmltopdf(args.url, os.path.join(backup_path_full, name)+".pdf")
-    else:
+    if args.backup_pdf_only is False:
         dest = args.dest
         if dest is None:
             dest = get_destination_path()
